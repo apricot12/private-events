@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   end
 
   def attend
-    @event = Event.find_by(params[:id])
+    @event = Event.find(params[:id])
     if current_user.id == @event.creator.id
       redirect_to root_path
       flash[:notice] = "You are already attending this event"
@@ -47,6 +47,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:description, :user_id)
+    params.require(:event).permit(:description, :user_id, :event_id)
   end
 end
