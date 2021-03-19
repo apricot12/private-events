@@ -23,6 +23,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event = Event.find_by(id: params[:id])
+    if @event.destroy
+      redirect_to root_path
+      flash[:notice] = 'your event has been deleted'
+    else
+      flash[:notice] = 'something happened'
+    end
+  end
+
   def attend
     @event = Event.find_by(params[:id])
     if current_user.id == @event.creator.id

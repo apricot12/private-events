@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
     <%= event.description %><br/><br/>
     <%= link_to "Show", event_path(event) %><br/><br/>
-    <%= button_to "delete", destroy_event_path, method: :delete %><br/>
+    <%= button_to "delete", event_path(event), method: :delete %><br/>
 <% end %>
 
 
