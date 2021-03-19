@@ -1,4 +1,9 @@
 <% @events.each do |event| %>
-    <%= event.description %><br><br/>
-    <%= link_to "Show", event_path(event) %><br><br/>
+    <%= event.description %><br/><br/>
+    <%= link_to "Show", event_path(event) %><br/><br/>
+    <%= button_to "delete", destroy_event_path, method: :delete %><br/>
 <% end %>
+
+
+
+<%= button_to 'log out', destroy_user_session_path, method: :delete %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :events, only: [:index, :show, :new, :create] do 
+  resources :events, only: [:index, :show, :new, :create, :destroy] do 
     member do
       get "attend"
     end

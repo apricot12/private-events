@@ -1,6 +1,9 @@
-<%= @event.creator.name %>
-<%= @event.description %>
-<%= button_to "Attend", attend_event_path, method: :get %>
-<%= @event.attendees.each do |attendee| %>
-    <%= attendee.name %><br><br/>
+<% @event.creator.name %>
+    <%= @event.description %><br/>
+    
+    <%= button_to "Attend", attend_event_path, method: :get %>
+    <% @event.attendees.uniq.each do |attendee| %>
+        <%= attendee.name %><br><br/>
+    
     <% end %>
+
