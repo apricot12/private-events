@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UserSignIns", type: :system do
+RSpec.describe 'UserSignIns', type: :system do
   before do
     driven_by(:rack_test)
   end
@@ -12,7 +12,7 @@ RSpec.describe "UserSignIns", type: :system do
     fill_in 'user[email]', with: user.email
     fill_in 'user[password]', with: '123456'
     click_button 'Log in'
-    expect(page).to have_text("Signed in successfully.")
+    expect(page).to have_text('Signed in successfully.')
   end
 
   it 'sings out when signed in' do
@@ -22,8 +22,8 @@ RSpec.describe "UserSignIns", type: :system do
     fill_in 'user[email]', with: user.email
     fill_in 'user[password]', with: '123456'
     click_button 'Log in'
-    expect(page).to have_text("Signed in successfully.")
+    expect(page).to have_text('Signed in successfully.')
     click_button 'Sign out'
-    expect(page).to have_text("Signed out successfully.")
+    expect(page).to have_text('Signed out successfully.')
   end
 end

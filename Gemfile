@@ -9,7 +9,7 @@ gem 'rexml'
 
 gem 'shoulda-matchers'
 
-gem 'rubocop', '~>0.81.0'
+gem 'rubocop', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
