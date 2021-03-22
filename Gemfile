@@ -5,6 +5,10 @@ ruby '3.0.0'
 
 gem 'devise'
 
+gem 'rexml'
+
+gem 'shoulda-matchers'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
@@ -50,6 +54,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 5.0.0'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
