@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   end
 
   def attend
-    @event = Event.find(params[:id])
+    @event = Event.find_by(params[:id])
     if current_user.id == @event.creator.id
       redirect_to root_path
       flash[:notice] = "You are already attending this event"

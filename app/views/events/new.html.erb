@@ -1,6 +1,6 @@
 <%= form_with model: @event do |f| %>
     <%= f.label :description %>
-    <%= f.text_field :description %><br><br/>
+    <%= f.text_field :description,placeholder: 'ok',class: 'form-control',id:"description"  %><br><br/>
     <%= f.date_field :date %><br><br/>
     <%= f.submit %>
 <% end %>
