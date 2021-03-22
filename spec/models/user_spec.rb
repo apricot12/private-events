@@ -2,8 +2,6 @@ require 'rails_helper'
 require 'capybara/rails'
 
 RSpec.describe User, type: :model do
-
-
   context 'validation test' do
     it 'ensures email presence' do
       user = User.new(email: 'sample@example.com').save

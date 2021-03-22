@@ -1,9 +1,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-
 RSpec.describe Event, type: :model do
-
   subject do
     described_class.new(description: 'Lorem ipsum',
                         date: DateTime.now,
@@ -39,5 +37,4 @@ RSpec.describe Event, type: :model do
     it { should have_many(:attendees) }
     it { should have_many(:invitations) }
   end
-
 end
