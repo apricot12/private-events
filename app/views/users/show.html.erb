@@ -1,3 +1,21 @@
-<%= @user.events.each do |event|%>
-  <%= event.description%>
+Upcoming Events:<br/>
+<% @user.attended_events.where('date >= ?', Date.current).each do |event|%>
+  <%= event.description%> <br/>
+<% end%>
+
+
+
+
+
+
+
+<br/><br/><br/>
+
+
+
+
+
+Past Events:<br/>
+<% @user.attended_events.where('date < ?', Date.current).each do |event|%>
+  <%= event.description%> <br/>
 <% end%>
