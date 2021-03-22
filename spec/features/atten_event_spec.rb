@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Create Event', type: :system do
+RSpec.describe 'Attend Event', type: :system do
   before do
     driven_by(:rack_test)
   end
@@ -8,7 +8,7 @@ RSpec.describe 'Create Event', type: :system do
   it 'Attend new event' do
     user1 = User.create(email: 'testuser@email.com', password: '123456')
     user2 = User.create(email: 'testuser2@email.com', password: '123456')
-    event = Event.create(description: 'Test even description 1', date: Date.parse("2022-04-23"), user_id: user2.id)
+    Event.create(description: 'Test even description 1', date: Date.parse('2022-04-23'), user_id: user2.id)
     visit root_path
     click_link_or_button 'Sign in'
     fill_in 'user[email]', with: user1.email
