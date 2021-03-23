@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @created_events = current_user.created_events
     @past_events = current_user.attended_events.past
-    @upcoming_events = current_user.attended_events.upcoming 
+    @upcoming_events = current_user.attended_events.upcoming
   end
 
   def new

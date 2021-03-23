@@ -5,5 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(params[:id])
+    @created_events = current_user.created_events
   end
 end
