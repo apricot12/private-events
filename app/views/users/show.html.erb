@@ -1,8 +1,7 @@
-<%= render "events/show" %>
 Upcoming Events:<br/>
-<% @upcoming_events.each do |event| %>
-  <%= event.description %> <br/>
-<% end %>
+  <% @upcoming_events.each do |event| %>
+    <%= event.description %> <br/>
+  <% end %>
 
 
 
@@ -10,21 +9,21 @@ Upcoming Events:<br/>
 
 
 
-<br/><br/><br/>
+  <br/><br/><br/>
 
 
 
 
 
-Past Events:<br/>
-<% @attended_events.each do |event|%>
-  <%= event.description%> <br/>
-<% end%>
+  Past Events:<br/>
+  <% @attended_events.each do |event|%>
+    <%= event.description%> <br/>
+  <% end%>
 
-<br/><br/><br/>
+  <br/><br/><br/>
 
 
-Created Events:<br/>
-<% @created_events.each do |event|%>
-  <%= event.description%> <br/>
-<% end%>
+  Created Events:<br/>
+  <% @created_events.each do |event|%>
+    <%= event.description%> <br/>
+  <% end%>
