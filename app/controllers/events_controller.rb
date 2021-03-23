@@ -8,9 +8,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @created_events = current_user.created_events
-    @past_events = current_user.attended_events.past
-    @upcoming_events = current_user.attended_events.upcoming
+    
+    
+   
   end
 
   def new
@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.created_events.build(event_params)
     if @event.save
+      @event.creator = current_user
       @event.attendees << current_user
       redirect_to root_path
       flash[:notice] = 'Your event has been created'

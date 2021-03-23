@@ -1,5 +1,28 @@
 <%= render "events/show" %>
+Upcoming Events:<br/>
+<% @upcoming_events.each do |event| %>
+  <%= event.description %> <br/>
+<% end %>
+
+
+
+
+
+
+
 <br/><br/><br/>
+
+
+
+
+
+Past Events:<br/>
+<% @attended_events.each do |event|%>
+  <%= event.description%> <br/>
+<% end%>
+
+<br/><br/><br/>
+
 
 Created Events:<br/>
 <% @created_events.each do |event|%>
