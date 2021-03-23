@@ -1,5 +1,5 @@
 Upcoming Events:<br/>
-<% Event.upcoming.each do |event|%>
+<% @upcoming_events.each do |event|%>
   <%= event.description%> <br/>
 <% end%>
 
@@ -16,6 +16,15 @@ Upcoming Events:<br/>
 
 
 Past Events:<br/>
-<% Event.past.each do |event|%>
+<% @past_events.each do |event|%>
+  <%= event.description%> <br/>
+<% end%>
+
+
+
+<br/><br/><br/>
+
+Past Events:<br/>
+<% @created_events.each do |event|%>
   <%= event.description%> <br/>
 <% end%>
