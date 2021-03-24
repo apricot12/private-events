@@ -2,7 +2,10 @@
 
 # Authentication
 
-> Rails project to demonstrate associations
+![screenshot](./screenshot/screen.png)
+
+
+> Rails project to demonstrate associations, when you log in you can  create new events or attend new events, and events are sorted in upcoming and past events.
 
 ## Built With
 
