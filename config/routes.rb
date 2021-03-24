@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'events/index'
-  get 'events/show'
-  get 'events/new'
-  get 'events/create'
-  devise_for :users, only: [:new, :create, :show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :users
+  resources :events, only: [:index, :show, :new, :create, :destroy] do 
+    member do
+      post "attend"
+    end
+  end
+
+  root "events#index"
 end

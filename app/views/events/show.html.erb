@@ -1,2 +1,11 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+
+    <%= @event.description %><br/>
+    <%= @event.id %>
+    <%= @event.date %><br/>
+    <%= attend_button(@event) %>
+    Host: <%= @event.creator.name %><br/>
+    Attendees: <br/>
+    <% @event.attendees.uniq.each do |attendee| %>
+        <%= attendee.name %><br><br/>
+    <% end %>
+
