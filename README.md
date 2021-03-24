@@ -21,7 +21,15 @@
 - Run "git clone https://github.com/apricot12/private-events.git"
 - cd into private-events
 - run "bundle install" to get all required gems
+- run "rails db:migrate"
 - run "rails server"
+
+### Testing
+
+Testing is done with rspec and capybara. To run tests, simply do the following :
+
+- Run "bundle exec rspec". This will run all the tests
+- If you want to run individual tests, simply provide a relative path, example : "bundle exec rspec ./spec/features/atten_event_spec.rb
 
 ## Authors
 
@@ -40,7 +48,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/apricot12/private-events/issues).
 
 ## Show your support
 
@@ -52,6 +60,3 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
