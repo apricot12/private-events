@@ -1,8 +1,8 @@
 
     <%= @event.description %><br/>
-    <%= button_to "Attend", attend_event_path(@event.id), method: :post %>
     <%= @event.id %>
     <%= @event.date %><br/>
+    <%= attend_button(@event) %>
     Host: <%= @event.creator.name %><br/>
     Attendees: <br/>
     <% @event.attendees.uniq.each do |attendee| %>
