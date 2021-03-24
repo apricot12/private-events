@@ -7,10 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    
-    
-   
+    @event = Event.find_by(id: params[:id])
   end
 
   def new
@@ -21,7 +18,6 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
     if @event.save
       @event.creator = current_user
-      @event.attendees << current_user
       redirect_to root_path
       flash[:notice] = 'Your event has been created'
     else
@@ -31,12 +27,12 @@ class EventsController < ApplicationController
   end
 
   def attend
-    @event = Event.find_by(params[:id])
+    @event = Event.find_by(id: params[:id])
     if current_user.id == @event.creator.id
       redirect_to root_path
       flash[:notice] = 'You are already attending this event'
     else
-      @event.attendees << current_user
+      Invitation.create!(event_id: @event.id, user_id: current_user.id) 
       redirect_to root_path
       flash[:notice] = 'You are now attending this event'
     end
