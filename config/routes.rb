@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "users#show"
+  root "events#index"
 end

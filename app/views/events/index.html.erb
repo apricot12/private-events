@@ -1,5 +1,15 @@
-<% @events.each do |event| %>
-    <%= event.description %><br/><br/>
+
+Upcoming Events:<br/>
+  <% @upcoming_events.each do |event| %>
+    <%= event.description %> <br/>
     <%= link_to "Show", event %><br/><br/>
-<% end %>
+  <% end %>
+
+  <br/><br/>
+
+  Past Events:<br/>
+  <% @past_events.each do |event|%>
+    <%= event.description%> <br/>
+    <%= link_to "Show", event %><br/><br/>
+  <% end%>
 
